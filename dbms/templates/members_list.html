@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members List</title>
+</head>
+<body>
+
+<h1>Members List</h1>
+
+<form method="post" action="{% url 'members_list' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add</button>
+</form>
+
+<form method="post" action="{% url 'delete_members' %}">
+    {% csrf_token %}
+    <table border="1">
+        <tr>
+            <th>Select</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Package Name</th>
+            <th>Members ID</th>
+            <th>Password</th>
+        </tr>
+        {% for memberr in member %}
+        <tr>
+            <td><input type="checkbox" name="selected_ids" value="{{ memberr.id }}"></td>
+            <td>{{ memberr.id }}</td>
+            <td>{{ memberr.name }}</td>
+            <td>{{ memberr.phno }}</td>
+            <td>{{ memberr.package_name }}</td>
+            <td>{{ memberr.m_id }}</td>
+            <td>{{ memberr.password }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Delete</button>
+</form>
+
+</body>
+</html>
