@@ -27,6 +27,7 @@
             <th>Current Package</th>
             <th>Employee ID</th>
             <th>Password</th>
+            <th scope="col">Actions</th>
         </tr>
         {% for employee in employees %}
         <tr>
@@ -37,12 +38,17 @@
             <td>{{ employee.curr_package }}</td>
             <td>{{ employee.e_id }}</td>
             <td>{{ employee.password }}</td>
+            <td>
+                <a href="{% url 'update_employee' employee.id %}">Update</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
     <button type="submit">Delete</button>
 </form>
-
+<form method="get" action="{% url 'adminsucess' %}">
+    <button type="submit">Back</button>
+</form>
 
 </body>
 </html>

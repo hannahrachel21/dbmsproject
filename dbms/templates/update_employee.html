@@ -10,10 +10,10 @@
 
 <h1>Update Employee</h1>
 
-<form method="post" action="{% url 'update_employee' employee_id %}">
+<form method="post" action="">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button type="submit">Next</button>
 </form>
 
 </body>

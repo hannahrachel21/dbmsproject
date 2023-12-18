@@ -27,6 +27,7 @@
             <th>Package Name</th>
             <th>Members ID</th>
             <th>Password</th>
+            <th scope="col">Actions</th>
         </tr>
         {% for memberr in member %}
         <tr>
@@ -37,11 +38,16 @@
             <td>{{ memberr.package_name }}</td>
             <td>{{ memberr.m_id }}</td>
             <td>{{ memberr.password }}</td>
+            <td>
+                <a href="{% url 'update_members' memberr.id %}">Update</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
     <button type="submit">Delete</button>
 </form>
-
+<form method="get" action="{% url 'adminsucess' %}">
+    <button type="submit">Back</button>
+</form>
 </body>
 </html>

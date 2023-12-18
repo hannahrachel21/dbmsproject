@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Members</title>
+    <title>Update Members Confirmation</title>
 </head>
 <body>
 
-<h1>Update Members</h1>
+<h1>Update Members Confirmation</h1>
 
-<form method="post" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Next</button>
-</form>
+<p>Members details updated successfully.</p>
+<a href="{% url 'members_list' %}">Back to Members List</a>
 
 </body>
 </html>
