@@ -3,6 +3,9 @@ from .models import employee
 from .forms import employeeForm
 from .models import members
 from .forms import memberForm
+#admin sucess
+def adminsucess(request):
+    return render(request, 'adminsucess.html')
 #employee views
 def employee_list(request):
     employees = employee.objects.all()

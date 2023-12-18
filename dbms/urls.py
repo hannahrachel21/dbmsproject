@@ -1,8 +1,10 @@
 from django.urls import path
 from .views import employee_list, delete_employee, update_employee
 from .views import members_list, delete_members, update_members
+from .views import adminsucess
 
 urlpatterns = [
+    path('', adminsucess, name='adminsucess'),
     path('employee_list/', employee_list, name='employee_list'),
     path('delete_employee/', delete_employee, name='delete_employee'),
     path('update_employee/<int:employee_id>/', update_employee, name='update_employee'),
