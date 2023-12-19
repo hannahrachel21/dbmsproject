@@ -1,17 +1,42 @@
-<!-- success_page.html -->
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'adminsucess.css' %}">
+    <title>Admin</title>
 </head>
 <body>
-    <h1>Welcome to the Admin page</h1>
-    <ul>
-        <li><a href="{% url 'employee_list' %}">View Employee</a></li>
-        <li><a href="{% url 'members_list' %}">View Member</a></li>
-    </ul>
+    <nav>
+        <a href="#" class="logo">GymPRO</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+  
+        <!-- Menu -->
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#about" onclick="toggleMenu();">Contact</a></li>
+            
+        </ul>
+    </nav>
+    <section>
+        <div class="container">
+            <h1 style="font-size: 80px;">Hello !</h1>
+            <h1 style="font-size: 80px; color: #edd014;">Admin</h1>
+          </div>
+          <div class="container1">
+            <div class="txt">
+                <a href="{% url 'employee_list' %}">View Employees</a></li>
+                <a href="{% url 'members_list' %}">View Members</a></li>
+            </div>
+                
+        
+        </div>
+    </section>
+    
+    <footer id="footer">
+        ishowdbms
+    </footer>
 </body>
 </html>
